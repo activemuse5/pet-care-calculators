@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Dog Age, Cat Age &amp; Feeding Calculators — Free Pet Care Calculators</title>
+    <meta name="description" content="Free dog age, cat age, feeding and pregnancy calculators. Every result shows its formula and source. No sign-up — estimates only, not veterinary advice." />
+    <link rel="canonical" href="https://muse.ai/s/pet-care-calculators-xoxe6xlxb0r4y3e/hlZpaWv3EpBgT9qWM7vQSDbsUrT3_fVCh3hNCKe8D4A" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dog Age, Cat Age &amp; Feeding Calculators — Free Pet Care Calculators" />
+    <meta property="og:description" content="Six free pet calculators with the formula shown for every result. No sign-up — estimates only, not veterinary advice." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dog Age, Cat Age &amp; Feeding Calculators — Free Pet Care Calculators" />
+    <meta name="twitter:description" content="Six free pet calculators with the formula shown for every result. No sign-up — estimates only, not veterinary advice." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Pet Care Calculators",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web browser)",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free dog age, cat age, feeding and pregnancy calculators. Every result shows its formula and source. Estimates only — not veterinary advice."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the “1 dog year = 7 human years” rule true?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Dogs mature much faster than that rule suggests in their first two years — the first year of a medium-sized dog's life is roughly equal to 15 human years, and the second adds about 9 more. After that, each dog year adds roughly 4 to 7 human years depending on size, with larger dogs ageing faster. That is why a 5-year-old medium dog works out to about 39 human years on the veterinary chart, not 35." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many cups of food does a 20-lb dog need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Using the RER method vets use: a 20-lb dog (9.07 kg) has a resting energy requirement of about 366 kcal per day. A typical neutered adult needs about 1.6 times that, roughly 585 kcal per day. With a food containing 350 kcal per cup, that is about 1.67 cups per day. Your dog's real need varies with activity and body condition, so adjust in small steps and check body condition every 2–4 weeks." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long are dogs pregnant?",
+          "acceptedAnswer": { "@type": "Answer", "text": "About 63 days from mating on average. The normal range is roughly 58 to 68 days, so a due date is best treated as the middle of a window rather than an exact day. If a pregnancy runs past 68 days, or you are unsure of the mating date, contact your vet." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can these calculators replace a vet?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. These calculators give general estimates from published formulas — they cannot examine your pet, and they do not diagnose, treat or dose anything. Always confirm feeding plans, growth concerns and pregnancy care with your own veterinarian, who knows your animal." }
+        }
+      ]
+    }
+    </script>
+    <style>
+      :root {
+        --bg: #f4f7f4;
+        --surface: #ffffff;
+        --surface-2: #e9f1ea;
+        --ink: #1c2a22;
+        --ink-soft: #43564b;
+        --line: #cfddd2;
+        --accent: #1e6b45;
+        --accent-ink: #ffffff;
+        --accent-soft: #dcefe2;
+        --warm: #b35c14;
+        --warm-soft: #fbeedd;
+        --result-bg: #e7f3ec;
+        --shadow: 0 1px 3px rgba(20, 45, 30, 0.10), 0 6px 18px rgba(20, 45, 30, 0.06);
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1512;
+          --surface: #18211b;
+          --surface-2: #1f2b23;
+          --ink: #e6efe9;
+          --ink-soft: #a9bcb0;
+          --line: #33463a;
+          --accent: #4cc084;
+          --accent-ink: #0d2016;
+          --accent-soft: #1d3327;
+          --warm: #eda55c;
+          --warm-soft: #332619;
+          --result-bg: #1b2f24;
+          --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 6px 18px rgba(0,0,0,0.3);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      a { color: var(--accent); }
+      a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+        outline: 3px solid var(--warm);
+        outline-offset: 2px;
+      }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+      header.site {
+        position: sticky; top: 0; z-index: 20;
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 10px 0; }
+      .brand { font-weight: 900; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+      .brand span { color: var(--accent); }
+      nav.main { margin-left: auto; }
+      nav.main ul { display: flex; gap: 4px; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+      nav.main a {
+        display: inline-flex; align-items: center; min-height: 2.25rem;
+        padding: 4px 12px; border-radius: 999px; text-decoration: none;
+        color: var(--ink); font-weight: 700; font-size: 0.95rem;
+      }
+      nav.main a:hover { background: var(--surface-2); }
+
+      .hero { padding: 44px 0 10px; }
+      .hero h1 {
+        font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.12;
+        font-weight: 900; letter-spacing: -0.02em; margin: 0 0 14px; max-width: 22ch;
+      }
+      .hero p.lede { font-size: 1.13rem; color: var(--ink-soft); max-width: 62ch; margin: 0 0 22px; }
+      .facts {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 8px;
+      }
+      .facts h2 { font-size: 1rem; margin: 0 0 10px; text-transform: none; letter-spacing: 0; }
+      .facts ul { margin: 0; padding-left: 20px; columns: 2; column-gap: 36px; }
+      .facts li { margin-bottom: 6px; break-inside: avoid; }
+      @media (max-width: 640px) { .facts ul { columns: 1; } }
+
+      section.block { padding: 34px 0 6px; }
+      section.block > h2 { font-size: 1.55rem; font-weight: 900; letter-spacing: -0.015em; margin: 0 0 6px; }
+      section.block > p.sub { color: var(--ink-soft); margin: 0 0 18px; max-width: 68ch; }
+
+      .start-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      @media (max-width: 760px) { .start-grid { grid-template-columns: 1fr; } }
+      .start-card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 20px; text-decoration: none; color: var(--ink); display: block;
+      }
+      .start-card:hover { border-color: var(--accent); }
+      .start-card h3 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 800; }
+      .start-card p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
+      .start-card .go { color: var(--accent); font-weight: 800; display: inline-block; margin-top: 10px; }
+
+      .tool {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 24px; margin-bottom: 22px;
+        scroll-margin-top: 84px;
+      }
+      .tool h3 { font-size: 1.35rem; font-weight: 900; margin: 0 0 4px; letter-spacing: -0.01em; }
+      .tool .tagline { color: var(--ink-soft); margin: 0 0 18px; max-width: 66ch; }
+      .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+      @media (max-width: 760px) { .tool-grid { grid-template-columns: 1fr; } }
+      .field { margin-bottom: 14px; }
+      .field label { display: block; font-weight: 700; margin-bottom: 5px; font-size: 0.97rem; }
+      .field .hint { font-weight: 400; color: var(--ink-soft); font-size: 0.88rem; }
+      .field input, .field select {
+        width: 100%; padding: 9px 12px; font: inherit; font-size: 1rem;
+        color: var(--ink); background: var(--bg);
+        border: 1px solid var(--line); border-radius: 9px;
+      }
+      .field-row { display: grid; grid-template-columns: 1fr 110px; gap: 10px; }
+      .results {
+        background: var(--result-bg); border-radius: 10px; padding: 18px 20px;
+      }
+      .results h4 { margin: 0 0 10px; font-size: 0.95rem; font-weight: 800; }
+      .result-line { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+      .result-line:last-of-type { border-bottom: none; }
+      .result-line .k { color: var(--ink-soft); }
+      .result-line .v { font-weight: 900; text-align: right; white-space: nowrap; }
+      .result-big { font-size: 1.5rem; font-weight: 900; margin: 2px 0 8px; }
+      .formula {
+        margin-top: 16px; background: var(--surface-2); border-radius: 10px; padding: 13px 16px;
+        font-size: 0.94rem;
+      }
+      .formula strong { display: block; margin-bottom: 3px; }
+      .formula code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; }
+      .source { font-size: 0.88rem; color: var(--ink-soft); margin: 10px 0 0; }
+      .notice {
+        margin-top: 14px; background: var(--warm-soft); color: var(--ink);
+        border-radius: 10px; padding: 10px 14px; font-size: 0.92rem; font-weight: 700;
+      }
+
+      .guide {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 24px; margin-bottom: 22px; scroll-margin-top: 84px;
+      }
+      .guide h3 { font-size: 1.3rem; font-weight: 900; margin: 0 0 10px; letter-spacing: -0.01em; }
+      .guide p { margin: 0 0 12px; max-width: 72ch; }
+      .guide ul, .guide ol { margin: 0 0 12px; padding-left: 22px; max-width: 72ch; }
+      .guide li { margin-bottom: 6px; }
+      .guide .cta { font-weight: 800; }
+      .worked {
+        background: var(--result-bg); border-radius: 10px; padding: 14px 18px; margin: 0 0 14px; max-width: 72ch;
+      }
+      .worked strong { display: block; margin-bottom: 4px; }
+
+      .faq-item {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 18px 20px; margin-bottom: 14px;
+      }
+      .faq-item h3 { margin: 0 0 8px; font-size: 1.08rem; font-weight: 800; }
+      .faq-item p { margin: 0; color: var(--ink-soft); max-width: 72ch; }
+
+      .trust {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 22px 24px; margin-bottom: 18px; scroll-margin-top: 84px;
+      }
+      .trust h3 { margin: 0 0 8px; font-size: 1.15rem; font-weight: 900; }
+      .trust p { margin: 0 0 10px; color: var(--ink-soft); max-width: 72ch; }
+      .trust p:last-child { margin-bottom: 0; }
+
+      footer.site { border-top: 1px solid var(--line); margin-top: 40px; padding: 26px 0 40px; background: var(--surface); }
+      footer.site nav ul { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0 0 14px; padding: 0; }
+      footer.site nav a { text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; min-height: 2rem; }
+      footer.site p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 8px; max-width: 78ch; }
+      footer.site p.money { font-weight: 800; color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap nav-row">
+        <a class="brand" href="#top">Pet Care <span>Calculators</span></a>
+        <nav class="main" aria-label="Main">
+          <ul>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <div class="wrap">
+        <section class="hero">
+          <h1>How old, how much food, how long to go — answered with the maths shown.</h1>
+          <p class="lede">Six free calculators for dog and cat owners: dog age, cat age, dog food, cat food, puppy adult weight and dog pregnancy. Every result shows the formula and the source behind it, so you can check the working — not just trust a number.</p>
+          <div class="facts">
+            <h2>The honest facts</h2>
+            <ul>
+              <li><strong>6 working tools</strong> — all free, no sign-up, no account.</li>
+              <li><strong>100% client-side</strong> — your inputs never leave your browser.</li>
+              <li><strong>Formulas shown</strong> — veterinary charts, the UCSD epigenetic formula and the RER feeding method, each with its source.</li>
+              <li><strong>Estimates only</strong> — these tools do not replace your veterinarian.</li>
+              <li><strong>Revenue: $0.00</strong> — this site has earned nothing.</li>
+              <li><strong>Monetization: not active</strong> — no affiliate links are live.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="start-h">
+          <h2 id="start-h">Start here — pick your pet</h2>
+          <p class="sub">Choose the closest match and jump straight to the right calculator.</p>
+          <div class="start-grid">
+            <a class="start-card" href="#dog-age">
+              <h3>Dogs</h3>
+              <p>Your dog's age in human years (two methods), and exactly how much food a dog of their weight and life stage needs each day.</p>
+              <span class="go">Dog age &amp; dog food →</span>
+            </a>
+            <a class="start-card" href="#cat-age">
+              <h3>Cats</h3>
+              <p>Your cat's age in human years on the veterinary chart, plus a daily feeding amount worked out from their weight.</p>
+              <span class="go">Cat age &amp; cat food →</span>
+            </a>
+            <a class="start-card" href="#puppy-weight">
+              <h3>Puppies &amp; pregnancy</h3>
+              <p>A rough estimate of how big your puppy will grow, and a due-date window if your dog is expecting a litter.</p>
+              <span class="go">Puppy weight &amp; due date →</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="block" id="tools" aria-labelledby="tools-h">
+          <h2 id="tools-h">The six calculators</h2>
+          <p class="sub">US-first in pounds, with kilogram equivalents shown in every result. Results update as you type.</p>
+
+          <!-- 1. DOG AGE -->
+          <article class="tool" id="dog-age">
+            <h3>1. Dog Age Calculator</h3>
+            <p class="tagline">Two recognised methods side by side: the veterinary age chart, which depends on your dog's size, and the UCSD epigenetic formula from DNA methylation research.</p>
+            <div class="tool-grid">
+              <form id="dog-age-form" novalidate>
+                <div class="field">
+                  <label for="dog-age-years">Dog's age (years) <span class="hint">— decimals allowed, e.g. 2.5</span></label>
+                  <input type="number" id="dog-age-years" value="5" min="0.1" max="30" step="0.1" inputmode="decimal" />
+                </div>
+                <div class="field">
+                  <label for="dog-age-size">Adult size</label>
+                  <select id="dog-age-size">
+                    <option value="small">Small — under 20 lb (under 9 kg)</option>
+                    <option value="medium" selected>Medium — 20–50 lb (9–23 kg)</option>
+                    <option value="large">Large — 50–90 lb (23–41 kg)</option>
+                    <option value="giant">Giant — over 90 lb (over 41 kg)</option>
+                  </select>
+                </div>
+              </form>
+              <div class="results" aria-live="polite" aria-atomic="true">
+                <h4>Result</h4>
+                <p class="result-big" id="dog-age-chart-out">39 human years</p>
+                <div class="result-line"><span class="k">Method A — veterinary chart</span><span class="v" id="dog-age-a">39 years</span></div>
+                <div class="result-line"><span class="k">Method B — UCSD epigenetic</span><span class="v" id="dog-age-b">57 years</span></div>
+                <div class="result-line"><span class="k">Life stage</span><span class="v" id="dog-age-stage">Adult</span></div>
+              </div>
+            </div>
+            <div class="formula">
+              <strong>How it is worked out</strong>
+              Method A: year 1 = 15 human years, year 2 adds 9 (total 24), then each further year adds <code>+4 (small) / +5 (medium) / +6 (large) / +7 (giant)</code>.<br />
+              Method B: <code>human years = 16 × ln(dog age) + 31</code>.
+            </div>
+            <p class="source">Sources: Method A follows the age chart published by the American Veterinary Medical Association (AVMA). Method B is from Wang et al., University of California San Diego, published in <em>Cell Systems</em> (2020); it was developed on Labrador retrievers, so treat it as a comparison, not a verdict on your individual dog.</p>
+            <p class="notice">Estimate only — not veterinary advice.</p>
+          </article>
+
+          <!-- 2. CAT AGE -->
+          <article class="tool" id="cat-age">
+            <h3>2. Cat Age Calculator</h3>
+            <p class="tagline">Cats race through their first two years, then age at a steadier pace of about four human years per cat year.</p>
+            <div class="tool-grid">
+              <form id="cat-age-form" novalidate>
+                <div class="field">
+                  <label for="cat-age-years">Cat's age (years) <span class="hint">— decimals allowed, e.g. 2.5</span></label>
+                  <input type="number" id="cat-age-years" value="5" min="0.1" max="35" step="0.1" inputmode="decimal" />
+                </div>
+              </form>
+              <div class="results" aria-live="polite" aria-atomic="true">
+                <h4>Result</h4>
+                <p class="result-big" id="cat-age-out">36 human years</p>
+                <div class="result-line"><span class="k">Life stage</span><span class="v" id="cat-age-stage">Adult</span></div>
+              </div>
+            </div>
+            <div class="formula">
+              <strong>How it is worked out</strong>
+              Year 1 = 15 human years, year 2 adds 9 (total 24), then <code>+4 human years for each further year</code>.
+            </div>
+            <p class="source">Source: the feline age chart published by the American Animal Hospital Association (AAHA) and used by the AVMA.</p>
+            <p class="notice">Estimate only — not veterinary advice.</p>
+          </article>
+
+          <!-- 3. DOG FOOD -->
+          <article class="tool" id="dog-food">
+            <h3>3. Dog Food Calculator</h3>
+            <p class="tagline">Daily calories from the resting energy requirement (RER) method vets use, converted into cups of your dog's actual food.</p>
+            <div class="tool-grid">
+              <form id="dog-food-form" novalidate>
+                <div class="field">
+                  <label for="dog-food-weight">Dog's weight</label>
+                  <div class="field-row">
+                    <input type="number" id="dog-food-weight" value="20" min="0.5" max="400" step="0.1" inputmode="decimal" />
+                    <select id="dog-food-unit" aria-label="Weight unit">
+                      <option value="lb" selected>lb</option>
+                      <option value="kg">kg</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="dog-food-stage">Life stage</label>
+                  <select id="dog-food-stage">
+                    <option value="1.6" selected>Neutered adult (×1.6)</option>
+                    <option value="1.8">Intact adult (×1.8)</option>
+                    <option value="1.2">Inactive / weight-prone (×1.2)</option>
+                    <option value="3.0">Puppy under 4 months (×3.0)</option>
+                    <option value="2.0">Puppy 4 months and older (×2.0)</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="dog-food-kcal">Food energy <span class="hint">— kcal per cup, printed on the bag</span></label>
+                  <input type="number" id="dog-food-kcal" value="350" min="50" max="1000" step="1" inputmode="decimal" />
+                </div>
+              </form>
+              <div class="results" aria-live="polite" aria-atomic="true">
+                <h4>Result</h4>
+                <p class="result-big" id="dog-food-cups-out">1.67 cups per day</p>
+                <div class="result-line"><span class="k">Weight in kg</span><span class="v" id="dog-food-kg">9.07 kg</span></div>
+                <div class="result-line"><span class="k">RER (resting energy)</span><span class="v" id="dog-food-rer">366 kcal/day</span></div>
+                <div class="result-line"><span class="k">Daily need (MER)</span><span class="v" id="dog-food-mer">585 kcal/day</span></div>
+                <div class="result-line"><span class="k">Food amount</span><span class="v" id="dog-food-cups">1.67 cups/day</span></div>
+              </div>
+            </div>
+            <div class="formula">
+              <strong>How it is worked out</strong>
+              <code>RER = 70 × (weight in kg)<sup>0.75</sup></code>, then <code>daily need (MER) = RER × life-stage factor</code>, then <code>cups = MER ÷ kcal per cup</code>.
+            </div>
+            <p class="source">Source: the RER/MER method in the WSAVA Global Nutrition Guidelines and AAHA nutritional assessment guidance. Individual dogs vary — adjust in small steps and check body condition every 2–4 weeks.</p>
+            <p class="notice">Estimate only — not veterinary advice.</p>
+          </article>
+
+          <!-- 4. CAT FOOD -->
+          <article class="tool" id="cat-food">
+            <h3>4. Cat Food Calculator</h3>
+            <p class="tagline">The same vet RER method, with the life-stage factors used for cats — neutered indoor cats need noticeably less than the bag often suggests.</p>
+            <div class="tool-grid">
+              <form id="cat-food-form" novalidate>
+                <div class="field">
+                  <label for="cat-food-weight">Cat's weight</label>
+                  <div class="field-row">
+                    <input type="number" id="cat-food-weight" value="10" min="0.5" max="60" step="0.1" inputmode="decimal" />
+                    <select id="cat-food-unit" aria-label="Weight unit">
+                      <option value="lb" selected>lb</option>
+                      <option value="kg">kg</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="cat-food-stage">Life stage</label>
+                  <select id="cat-food-stage">
+                    <option value="1.4" selected>Neutered adult (×1.4)</option>
+                    <option value="1.6">Intact adult (×1.6)</option>
+                    <option value="1.0">Inactive / weight-prone (×1.0)</option>
+                    <option value="2.5">Kitten (×2.5)</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="cat-food-kcal">Food energy <span class="hint">— kcal per cup, printed on the bag</span></label>
+                  <input type="number" id="cat-food-kcal" value="350" min="50" max="1000" step="1" inputmode="decimal" />
+                </div>
+              </form>
+              <div class="results" aria-live="polite" aria-atomic="true">
+                <h4>Result</h4>
+                <p class="result-big" id="cat-food-cups-out">0.87 cups per day</p>
+                <div class="result-line"><span class="k">Weight in kg</span><span class="v" id="cat-food-kg">4.54 kg</span></div>
+                <div class="result-line"><span class="k">RER (resting energy)</span><span class="v" id="cat-food-rer">218 kcal/day</span></div>
+                <div class="result-line"><span class="k">Daily need (MER)</span><span class="v" id="cat-food-mer">305 kcal/day</span></div>
+                <div class="result-line"><span class="k">Food amount</span><span class="v" id="cat-food-cups">0.87 cups/day</span></div>
+              </div>
+            </div>
+            <div class="formula">
+              <strong>How it is worked out</strong>
+              <code>RER = 70 × (weight in kg)<sup>0.75</sup></code>, then <code>daily need (MER) = RER × life-stage factor</code>, then <code>cups = MER ÷ kcal per cup</code>.
+            </div>
+            <p class="source">Source: the RER/MER method in the WSAVA Global Nutrition Guidelines and AAHA nutritional assessment guidance. Individual cats vary — adjust in small steps and check body condition every 2–4 weeks.</p>
+            <p class="notice">Estimate only — not veterinary advice.</p>
+          </article>
+
+          <!-- 5. PUPPY WEIGHT -->
+          <article class="tool" id="puppy-weight">
+            <h3>5. Puppy Weight Predictor</h3>
+            <p class="tagline">A rough growth-curve estimate of adult weight from your puppy's current weight and age. Breed makes a big difference — treat this as a ballpark, not a promise.</p>
+            <div class="tool-grid">
+              <form id="puppy-form" novalidate>
+                <div class="field">
+                  <label for="puppy-weight-now">Puppy's current weight</label>
+                  <div class="field-row">
+                    <input type="number" id="puppy-weight-now" value="10" min="0.2" max="150" step="0.1" inputmode="decimal" />
+                    <select id="puppy-unit" aria-label="Weight unit">
+                      <option value="lb" selected>lb</option>
+                      <option value="kg">kg</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="puppy-weeks">Puppy's age (weeks)</label>
+                  <input type="number" id="puppy-weeks" value="16" min="2" max="51" step="1" inputmode="numeric" />
+                </div>
+              </form>
+              <div class="results" aria-live="polite" aria-atomic="true">
+                <h4>Result</h4>
+                <p class="result-big" id="puppy-out">≈ 32.5 lb as an adult</p>
+                <div class="result-line"><span class="k">Estimated adult weight</span><span class="v" id="puppy-lb">32.5 lb</span></div>
+                <div class="result-line"><span class="k">In kilograms</span><span class="v" id="puppy-kg">14.7 kg</span></div>
+              </div>
+            </div>
+            <div class="formula">
+              <strong>How it is worked out</strong>
+              <code>estimated adult weight = current weight ÷ age in weeks × 52</code> — it assumes roughly steady growth across the first year.
+            </div>
+            <p class="source">Source: a widely used breeder growth-curve rule of thumb. Real adult weight varies a lot by breed, sex, parents' size and nutrition; your vet can give a closer estimate from your puppy's breed and growth record.</p>
+            <p class="notice">Estimate only — not veterinary advice.</p>
+          </article>
+
+          <!-- 6. DOG PREGNANCY -->
+          <article class="tool" id="dog-pregnancy">
+            <h3>6. Dog Pregnancy Calculator</h3>
+            <p class="tagline">A due-date window from the mating date. Information only — pregnancy care, whelping plans and any worries belong with your vet.</p>
+            <div class="tool-grid">
+              <form id="pregnancy-form" novalidate>
+                <div class="field">
+                  <label for="preg-date">Mating date</label>
+                  <input type="date" id="preg-date" value="2026-11-26" />
+                </div>
+              </form>
+              <div class="results" aria-live="polite" aria-atomic="true">
+                <h4>Result</h4>
+                <p class="result-big" id="preg-due-out">Due around 28 January 2027</p>
+                <div class="result-line"><span class="k">Expected due date (+63 days)</span><span class="v" id="preg-due">28 Jan 2027</span></div>
+                <div class="result-line"><span class="k">Typical window opens (+58 days)</span><span class="v" id="preg-from">23 Jan 2027</span></div>
+                <div class="result-line"><span class="k">Typical window closes (+68 days)</span><span class="v" id="preg-to">2 Feb 2027</span></div>
+              </div>
+            </div>
+            <div class="formula">
+              <strong>How it is worked out</strong>
+              <code>due date = mating date + 63 days</code>. The typical gestation range is <code>58–68 days</code>, so plan for the whole window, not one day.
+            </div>
+            <p class="source">Source: typical canine gestation length as given in standard veterinary references. Book a vet visit early in the pregnancy to confirm it and plan scans, nutrition and whelping. If the window passes with no labour, contact your vet promptly.</p>
+            <p class="notice">Estimate only — not veterinary advice. See your vet for pregnancy care.</p>
+          </article>
+        </section>
+
+        <section class="block" id="guides" aria-labelledby="guides-h">
+          <h2 id="guides-h">Guides</h2>
+          <p class="sub">The thinking behind the calculators, with the same worked examples you can check above.</p>
+
+          <article class="guide" id="guide-dog-age">
+            <h3>How old is my dog in human years? Both methods explained</h3>
+            <p>Almost everyone has heard the rule: multiply your dog's age by seven. It is simple, memorable — and wrong. Dogs do not age at a steady seven-times speed. They mature very fast in their first two years, then slow down, and larger dogs age faster in later life than smaller ones. A single multiplier cannot capture any of that.</p>
+            <div class="worked">
+              <strong>Worked example — a 5-year-old medium dog</strong>
+              The “×7 rule” says 35 human years. The veterinary chart says <strong>39</strong>: year 1 counts as 15, year 2 adds 9 (24 total), and the next three years add 5 each for a medium dog — 24 + 15 = 39. The UCSD epigenetic formula says <strong>57</strong>: 16 × ln(5) + 31 ≈ 56.8, which rounds to 57.
+            </div>
+            <p><strong>Why do the two real methods disagree?</strong> They measure different things. The veterinary chart (published by the AVMA) is a practical life-stage guide built from how dogs develop and age in the clinic — when they mature, and when size-related ageing kicks in. The UCSD formula (Wang et al., <em>Cell Systems</em>, 2020) compares DNA methylation patterns — chemical marks on DNA that change predictably with age — between Labrador retrievers and humans. It captures the rapid early-life ageing the chart also shows, but runs “older” in mid-life because methylation ageing and life-stage ageing are not the same clock.</p>
+            <p><strong>Which should you use?</strong> For everyday decisions — when to switch to a senior diet, when to start twice-yearly vet checks — the chart is the practical tool, and it is the one that adjusts for size. The epigenetic number is a fascinating comparison and a good reminder that the first year is worth far more than seven. Either way, both are population averages: your individual dog's health matters more than any converted number.</p>
+            <p class="cta">Try it with your dog: <a href="#dog-age">Dog Age Calculator →</a></p>
+          </article>
+
+          <article class="guide" id="guide-dog-food">
+            <h3>How much should I feed my dog? The RER method vets use</h3>
+            <p>The feeding guide printed on a bag of dog food is written for an average dog that may not resemble yours — it cannot know whether your dog is neutered, elderly, or training for agility. Vets start from a different place: your dog's resting energy requirement, or RER — the calories needed at complete rest, calculated from body weight — then scale it by a life-stage factor to get the daily target (MER).</p>
+            <div class="worked">
+              <strong>Worked example — a 20-lb neutered adult dog</strong>
+              20 lb is 9.07 kg. RER = 70 × 9.07<sup>0.75</sup> = <strong>366 kcal/day</strong>. A neutered adult's factor is 1.6, so MER = 366 × 1.6 = <strong>585 kcal/day</strong>. With a food at 350 kcal per cup: 585 ÷ 350 = <strong>1.67 cups per day</strong> — split across meals, and not counting treats.
+            </div>
+            <p><strong>The factor does the heavy lifting.</strong> An intact adult uses ×1.8; an inactive or weight-prone dog ×1.2; a puppy under four months ×3.0, dropping to ×2.0 after that. Picking the wrong factor changes the answer far more than rounding ever will — a 20-lb puppy needs nearly twice the food of a 20-lb inactive adult.</p>
+            <p><strong>Then reality-check it.</strong> These formulas estimate a starting point, not a verdict. Individual needs vary — commonly by 20% or more either way. Feed the calculated amount, then check body condition every 2–4 weeks: you should be able to feel ribs under a slight fat covering, and see a waist from above and the side. If your dog is gaining, trim the amount by about 10%; if losing, add about 10% — and raise any persistent change with your vet rather than this page.</p>
+            <p class="cta">Work out your dog's amount: <a href="#dog-food">Dog Food Calculator →</a> (feeding a cat? <a href="#cat-food">Cat Food Calculator →</a>)</p>
+          </article>
+
+          <article class="guide" id="guide-pregnancy">
+            <h3>Dog pregnancy timeline: the 63 days</h3>
+            <p>A dog's pregnancy is short — about 63 days from mating, with a normal range of roughly 58 to 68 days. Because ovulation timing varies, count the due date as the middle of a window and plan around the whole of it. This is an overview to help you plan vet visits; it is not a substitute for them, and it deliberately does not attempt to diagnose anything.</p>
+            <ul>
+              <li><strong>Weeks 1–2:</strong> Fertilisation and implantation. Nothing is visible from outside; keep food, exercise and routine normal.</li>
+              <li><strong>Weeks 3–4:</strong> Embryos develop. Some dogs eat a little less briefly. This is the usual time for a first vet visit to confirm the pregnancy and discuss care.</li>
+              <li><strong>Week 5:</strong> Puppies are recognisably forming. Appetite usually returns and grows; your vet may suggest adjusting food gradually and can discuss an ultrasound or later X-ray to estimate litter size.</li>
+              <li><strong>Weeks 6–7:</strong> The abdomen enlarges and weight gain speeds up. Set up a quiet whelping area so she can get used to it, and confirm your vet's out-of-hours contact details.</li>
+              <li><strong>Weeks 8–9:</strong> Final preparation. Milk may appear, and many breeders monitor temperature as whelping approaches — ask your vet what to watch for in your dog's case and exactly when to call.</li>
+            </ul>
+            <p><strong>When to see the vet:</strong> book in as soon as you suspect pregnancy, again mid-pregnancy as advised, and call promptly if the 68-day mark passes with no labour, if labour stalls, or if anything worries you at any point. Only your vet, who can examine your dog, can judge whether things are progressing normally.</p>
+            <p class="cta">Get your dog's due-date window: <a href="#dog-pregnancy">Dog Pregnancy Calculator →</a></p>
+          </article>
+        </section>
+
+        <section class="block" id="faq" aria-labelledby="faq-h">
+          <h2 id="faq-h">Frequently asked questions</h2>
+          <p class="sub">Short answers; the guides above carry the detail.</p>
+
+          <div class="faq-item">
+            <h3>Is the “1 dog year = 7 human years” rule true?</h3>
+            <p>No. Dogs mature much faster than that rule suggests in their first two years — the first year of a medium-sized dog's life is roughly equal to 15 human years, and the second adds about 9 more. After that, each dog year adds roughly 4 to 7 human years depending on size, with larger dogs ageing faster. That is why a 5-year-old medium dog works out to about 39 human years on the veterinary chart, not 35.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How many cups of food does a 20-lb dog need?</h3>
+            <p>Using the RER method vets use: a 20-lb dog (9.07 kg) has a resting energy requirement of about 366 kcal per day. A typical neutered adult needs about 1.6 times that, roughly 585 kcal per day. With a food containing 350 kcal per cup, that is about 1.67 cups per day. Your dog's real need varies with activity and body condition, so adjust in small steps and check body condition every 2–4 weeks.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How long are dogs pregnant?</h3>
+            <p>About 63 days from mating on average. The normal range is roughly 58 to 68 days, so a due date is best treated as the middle of a window rather than an exact day. If a pregnancy runs past 68 days, or you are unsure of the mating date, contact your vet.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can these calculators replace a vet?</h3>
+            <p>No. These calculators give general estimates from published formulas — they cannot examine your pet, and they do not diagnose, treat or dose anything. Always confirm feeding plans, growth concerns and pregnancy care with your own veterinarian, who knows your animal.</p>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="trust-h">
+          <h2 id="trust-h">About this site</h2>
+          <p class="sub">Who runs it, what it does with your data, and the terms it works under.</p>
+
+          <div class="trust" id="about">
+            <h3>About</h3>
+            <p>Pet Care Calculators is a small, free website of six everyday calculators for dog and cat owners: pet age in human years (two methods for dogs), daily feeding amounts using the RER method vets use, a puppy adult-weight estimate, and a dog pregnancy due-date window.</p>
+            <p>Every calculator shows its formula and its source on the page, because a number you cannot check is a number you should not trust. The site is run by an individual, not a veterinary practice, and nothing here is veterinary advice.</p>
+          </div>
+
+          <div class="trust" id="privacy">
+            <h3>Privacy</h3>
+            <p>These calculators run entirely in your browser. The ages, weights and dates you type are never sent to a server, never stored, and never shared — there is no account, no sign-up and no analytics collecting them. Close the tab and everything you entered is gone.</p>
+            <p>One outside service is used: the page loads its typeface from Google Fonts, which means your browser contacts Google's servers to fetch the font files, as on most websites. No other third-party trackers or advertising scripts are loaded.</p>
+          </div>
+
+          <div class="trust" id="terms">
+            <h3>Terms</h3>
+            <p>Everything on this site is a general estimate produced from published formulas and charts. Results are provided for information only and are <strong>not veterinary advice</strong>: they are not a diagnosis, a treatment plan, a feeding prescription or a medication dose, and this site deliberately contains no diagnosis, symptom, dosing or toxicity guidance.</p>
+            <p>Individual animals vary. Always confirm feeding plans, growth concerns and pregnancy care with your own veterinarian. By using the calculators you accept that results may differ from your pet's actual needs.</p>
+          </div>
+
+          <div class="trust" id="affiliate">
+            <h3>Affiliate disclosure</h3>
+            <p>There are currently <strong>no affiliate links anywhere on this site</strong>, and it carries no advertising. Revenue to date: $0.00. If affiliate links are ever added, they will be labelled at the point of use and this section will be updated first.</p>
+          </div>
+
+          <div class="trust" id="contact">
+            <h3>Contact</h3>
+            <p>Spotted a wrong number, a broken calculator, or a formula you think we have mis-stated? Email <a href="mailto:janmeshverma6@gmail.com">janmeshverma6@gmail.com</a> — corrections with a source are especially welcome.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="wrap">
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="#dog-age">Dog Age</a></li>
+            <li><a href="#cat-age">Cat Age</a></li>
+            <li><a href="#dog-food">Dog Food</a></li>
+            <li><a href="#cat-food">Cat Food</a></li>
+            <li><a href="#puppy-weight">Puppy Weight</a></li>
+            <li><a href="#dog-pregnancy">Dog Pregnancy</a></li>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#affiliate">Affiliate Disclosure</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="money">Revenue: $0.00 · Monetization: not active</p>
+        <p>All calculators are estimates only and are not veterinary advice. Formulas and sources are shown on each tool.</p>
+        <p>Hosting note: this site is served as a single page, so it cannot provide separate sitemap.xml or robots.txt files. No claim is made about Google indexing or Search Console verification.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+        // Empire floating-point rule: round to 2 decimal places before any
+        // rounding-up or display rounding of computed quantities.
+        function r2(x) { return Math.round(x * 100) / 100; }
+        function num(id) {
+          var v = parseFloat(document.getElementById(id).value);
+          return isFinite(v) ? v : NaN;
+        }
+        function set(id, text) { document.getElementById(id).textContent = text; }
+        function listen(ids, fn) {
+          ids.forEach(function (id) {
+            var el = document.getElementById(id);
+            el.addEventListener("input", fn);
+            el.addEventListener("change", fn);
+          });
+          fn();
+        }
+        var LB_TO_KG = 0.45359237;
+
+        /* ---------- 1. Dog age ---------- */
+        function dogLifeStage(age) {
+          if (age < 1) return "Puppy";
+          if (age < 3) return "Young adult";
+          if (age < 7) return "Adult";
+          if (age < 11) return "Senior";
+          return "Senior (geriatric)";
+        }
+        function calcDogAge() {
+          var age = num("dog-age-years");
+          var per = { small: 4, medium: 5, large: 6, giant: 7 }[document.getElementById("dog-age-size").value];
+          if (!(age > 0)) { set("dog-age-chart-out", "Enter an age above 0"); set("dog-age-a", "—"); set("dog-age-b", "—"); set("dog-age-stage", "—"); return; }
+          var chart;
+          if (age <= 1) chart = 15 * age;
+          else if (age <= 2) chart = 15 + 9 * (age - 1);
+          else chart = 24 + per * (age - 2);
+          chart = Math.round(r2(chart));
+          var ucsd = Math.round(r2(16 * Math.log(age) + 31));
+          set("dog-age-chart-out", chart + " human years");
+          set("dog-age-a", chart + " years");
+          set("dog-age-b", ucsd + " years");
+          set("dog-age-stage", dogLifeStage(age));
+        }
+        listen(["dog-age-years", "dog-age-size"], calcDogAge);
+
+        /* ---------- 2. Cat age ---------- */
+        function catLifeStage(age) {
+          if (age < 1) return "Kitten";
+          if (age < 7) return "Adult";
+          if (age < 11) return "Mature";
+          if (age < 15) return "Senior";
+          return "Super senior";
+        }
+        function calcCatAge() {
+          var age = num("cat-age-years");
+          if (!(age > 0)) { set("cat-age-out", "Enter an age above 0"); set("cat-age-stage", "—"); return; }
+          var human;
+          if (age <= 1) human = 15 * age;
+          else if (age <= 2) human = 15 + 9 * (age - 1);
+          else human = 24 + 4 * (age - 2);
+          human = Math.round(r2(human));
+          set("cat-age-out", human + " human years");
+          set("cat-age-stage", catLifeStage(age));
+        }
+        listen(["cat-age-years"], calcCatAge);
+
+        /* ---------- 3 & 4. Food (shared RER engine) ---------- */
+        function makeFood(prefix) {
+          return function () {
+            var w = num(prefix + "-weight");
+            var unit = document.getElementById(prefix + "-unit").value;
+            var factor = parseFloat(document.getElementById(prefix + "-stage").value);
+            var kcal = num(prefix + "-kcal");
+            if (!(w > 0) || !(kcal > 0)) {
+              set(prefix + "-cups-out", "Enter a weight and food energy");
+              set(prefix + "-kg", "—"); set(prefix + "-rer", "—"); set(prefix + "-mer", "—"); set(prefix + "-cups", "—");
+              return;
+            }
+            var kg = unit === "kg" ? w : w * LB_TO_KG;
+            var rer = 70 * Math.pow(kg, 0.75);
+            var mer = rer * factor;
+            var cups = r2(mer / kcal);
+            set(prefix + "-kg", r2(kg).toFixed(2) + " kg");
+            set(prefix + "-rer", Math.round(r2(rer)) + " kcal/day");
+            set(prefix + "-mer", Math.round(r2(mer)) + " kcal/day");
+            set(prefix + "-cups", cups.toFixed(2) + " cups/day");
+            set(prefix + "-cups-out", cups.toFixed(2) + " cups per day");
+          };
+        }
+        listen(["dog-food-weight", "dog-food-unit", "dog-food-stage", "dog-food-kcal"], makeFood("dog-food"));
+        listen(["cat-food-weight", "cat-food-unit", "cat-food-stage", "cat-food-kcal"], makeFood("cat-food"));
+
+        /* ---------- 5. Puppy weight ---------- */
+        function calcPuppy() {
+          var w = num("puppy-weight-now");
+          var weeks = num("puppy-weeks");
+          var unit = document.getElementById("puppy-unit").value;
+          if (!(w > 0) || !(weeks > 0)) { set("puppy-out", "Enter a weight and age"); set("puppy-lb", "—"); set("puppy-kg", "—"); return; }
+          var adult = r2(w / weeks * 52);
+          var lb = unit === "lb" ? adult : r2(adult / LB_TO_KG);
+          var kg = unit === "kg" ? adult : r2(adult * LB_TO_KG);
+          set("puppy-lb", lb.toFixed(1) + " lb");
+          set("puppy-kg", kg.toFixed(1) + " kg");
+          set("puppy-out", "≈ " + lb.toFixed(1) + " lb as an adult");
+        }
+        listen(["puppy-weight-now", "puppy-unit", "puppy-weeks"], calcPuppy);
+
+        /* ---------- 6. Dog pregnancy ---------- */
+        var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        function fmtShort(d) { return d.getUTCDate() + " " + MONTHS[d.getUTCMonth()] + " " + d.getUTCFullYear(); }
+        function fmtLong(d) { return d.getUTCDate() + " " + MONTHS_LONG[d.getUTCMonth()] + " " + d.getUTCFullYear(); }
+        function calcPregnancy() {
+          var raw = document.getElementById("preg-date").value;
+          var parts = raw.split("-");
+          if (parts.length !== 3) { set("preg-due-out", "Pick a mating date"); set("preg-due", "—"); set("preg-from", "—"); set("preg-to", "—"); return; }
+          var base = new Date(Date.UTC(+parts[0], +parts[1] - 1, +parts[2]));
+          if (isNaN(base.getTime())) { set("preg-due-out", "Pick a mating date"); return; }
+          function add(days) { var t = new Date(base.getTime()); t.setUTCDate(t.getUTCDate() + days); return t; }
+          var due = add(63), from = add(58), to = add(68);
+          set("preg-due", fmtShort(due));
+          set("preg-from", fmtShort(from));
+          set("preg-to", fmtShort(to));
+          set("preg-due-out", "Due around " + fmtLong(due));
+        }
+        listen(["preg-date"], calcPregnancy);
+
+        // Stop the helper forms from ever submitting/reloading the page.
+        document.querySelectorAll("form").forEach(function (f) {
+          f.addEventListener("submit", function (e) { e.preventDefault(); });
+        });
+      })();
+    </script>
+  </body>
+</html>
