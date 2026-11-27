@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="data:," />
     <title>Dog Age, Cat Age &amp; Feeding Calculators — Free Pet Care Calculators</title>
     <meta name="description" content="Free dog age, cat age, feeding and pregnancy calculators. Every result shows its formula and source. No sign-up — estimates only, not veterinary advice." />
-    <link rel="canonical" href="https://muse.ai/s/pet-care-calculators-xoxe6xlxb0r4y3e/hlZpaWv3EpBgT9qWM7vQSDbsUrT3_fVCh3hNCKe8D4A" />
+    <link rel="canonical" href="https://activemuse5.github.io/pet-care-calculators/" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dog Age, Cat Age &amp; Feeding Calculators — Free Pet Care Calculators" />
@@ -59,37 +59,23 @@
     </script>
     <style>
       :root {
-        --bg: #f4f7f4;
+        color-scheme: light;
+        --bg: #f8fafc;
         --surface: #ffffff;
-        --surface-2: #e9f1ea;
-        --ink: #1c2a22;
-        --ink-soft: #43564b;
-        --line: #cfddd2;
-        --accent: #1e6b45;
-        --accent-ink: #ffffff;
-        --accent-soft: #dcefe2;
-        --warm: #b35c14;
-        --warm-soft: #fbeedd;
-        --result-bg: #e7f3ec;
-        --shadow: 0 1px 3px rgba(20, 45, 30, 0.10), 0 6px 18px rgba(20, 45, 30, 0.06);
-        --radius: 14px;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0f1512;
-          --surface: #18211b;
-          --surface-2: #1f2b23;
-          --ink: #e6efe9;
-          --ink-soft: #a9bcb0;
-          --line: #33463a;
-          --accent: #4cc084;
-          --accent-ink: #0d2016;
-          --accent-soft: #1d3327;
-          --warm: #eda55c;
-          --warm-soft: #332619;
-          --result-bg: #1b2f24;
-          --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 6px 18px rgba(0,0,0,0.3);
-        }
+        --surface-2: #f1f5f9;
+        --ink: #0f172a;
+        --ink-soft: #64748b;
+        --line: #e2e8f0;
+        --accent: #0d9488;
+        --accent-2: #14b8a6;
+        --accent-dark: #0f766e;
+        --accent-soft: #f0fdfa;
+        --accent-tint: #ccfbf1;
+        --warm: #b45309;
+        --warm-soft: #fffbeb;
+        --warm-line: #fde68a;
+        --shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 12px 32px -16px rgba(15, 23, 42, 0.16);
+        --radius: 16px;
       }
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
@@ -101,23 +87,35 @@
         font-family: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
         font-size: 17px;
         line-height: 1.55;
+        overflow-x: clip;
       }
       button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
       a { color: var(--accent); }
-      a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
-        outline: 3px solid var(--warm);
+      a:focus-visible, button:focus-visible, summary:focus-visible {
+        outline: 3px solid rgba(20, 184, 166, 0.55);
         outline-offset: 2px;
       }
       .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
       header.site {
         position: sticky; top: 0; z-index: 20;
-        background: var(--surface);
+        background: rgba(255, 255, 255, 0.94);
         border-bottom: 1px solid var(--line);
+        box-shadow: 0 1px 12px rgba(15, 23, 42, 0.05);
       }
       .nav-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 10px 0; }
-      .brand { font-weight: 900; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
-      .brand span { color: var(--accent); }
+      .brand {
+        display: inline-flex; align-items: center; gap: 10px;
+        font-weight: 900; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+      }
+      .brand .word-accent { color: var(--accent); }
+      .logo-mark {
+        flex: none; width: 36px; height: 36px; border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #ffffff; display: inline-flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 10px -4px rgba(13, 148, 136, 0.55);
+      }
+      .logo-mark svg { width: 21px; height: 21px; }
       nav.main { margin-left: auto; }
       nav.main ul { display: flex; gap: 4px; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
       nav.main a {
@@ -125,9 +123,28 @@
         padding: 4px 12px; border-radius: 999px; text-decoration: none;
         color: var(--ink); font-weight: 700; font-size: 0.95rem;
       }
-      nav.main a:hover { background: var(--surface-2); }
+      nav.main a:hover { background: var(--accent-soft); color: var(--accent-dark); }
 
-      .hero { padding: 44px 0 10px; }
+      .hero { padding: 46px 0 10px; position: relative; }
+      .hero::before {
+        content: ""; position: absolute; inset: 0 -20px auto -20px; height: 360px;
+        background:
+          radial-gradient(560px 260px at 12% 0%, rgba(20, 184, 166, 0.10), rgba(20, 184, 166, 0) 65%),
+          radial-gradient(rgba(13, 148, 136, 0.13) 1.6px, rgba(13, 148, 136, 0) 1.7px);
+        background-size: auto, 22px 22px;
+        -webkit-mask-image: linear-gradient(180deg, #000 30%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(180deg, #000 30%, rgba(0,0,0,0) 100%);
+        pointer-events: none;
+      }
+      .hero > * { position: relative; }
+      .badge {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--surface); border: 1px solid var(--accent-tint);
+        color: var(--accent-dark); font-weight: 800; font-size: 0.86rem;
+        padding: 6px 14px; border-radius: 999px; margin: 0 0 18px;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+      }
+      .badge svg { width: 15px; height: 15px; color: var(--accent); }
       .hero h1 {
         font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.12;
         font-weight: 900; letter-spacing: -0.02em; margin: 0 0 14px; max-width: 22ch;
@@ -137,32 +154,54 @@
         background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
         box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 8px;
       }
-      .facts h2 { font-size: 1rem; margin: 0 0 10px; text-transform: none; letter-spacing: 0; }
+      .facts h2 { font-size: 1rem; margin: 0 0 10px; color: var(--accent-dark); }
       .facts ul { margin: 0; padding-left: 20px; columns: 2; column-gap: 36px; }
       .facts li { margin-bottom: 6px; break-inside: avoid; }
       @media (max-width: 640px) { .facts ul { columns: 1; } }
 
       section.block { padding: 34px 0 6px; }
       section.block > h2 { font-size: 1.55rem; font-weight: 900; letter-spacing: -0.015em; margin: 0 0 6px; }
+      section.block > h2::after {
+        content: ""; display: block; width: 42px; height: 4px; border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2)); margin-top: 8px;
+      }
       section.block > p.sub { color: var(--ink-soft); margin: 0 0 18px; max-width: 68ch; }
 
       .start-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
       @media (max-width: 760px) { .start-grid { grid-template-columns: 1fr; } }
       .start-card {
+        position: relative; overflow: hidden;
         background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-        box-shadow: var(--shadow); padding: 20px; text-decoration: none; color: var(--ink); display: block;
+        box-shadow: var(--shadow); padding: 22px 20px 20px; text-decoration: none; color: var(--ink); display: block;
       }
-      .start-card:hover { border-color: var(--accent); }
-      .start-card h3 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 800; }
+      .start-card::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+      .start-card:hover { border-color: var(--accent-2); }
+      .start-card h3 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 11px; }
       .start-card p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
-      .start-card .go { color: var(--accent); font-weight: 800; display: inline-block; margin-top: 10px; }
+      .start-card .go { color: var(--accent-dark); font-weight: 800; display: inline-block; margin-top: 10px; }
+      .tool-icon {
+        flex: none; width: 46px; height: 46px; border-radius: 13px;
+        background: var(--accent-soft); border: 1px solid var(--accent-tint);
+        color: var(--accent-dark); display: inline-flex; align-items: center; justify-content: center;
+      }
+      .tool-icon svg { width: 24px; height: 24px; }
+      .tool-icon.sm { width: 38px; height: 38px; border-radius: 11px; }
+      .tool-icon.sm svg { width: 20px; height: 20px; }
 
       .tool {
+        position: relative; overflow: hidden;
         background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-        box-shadow: var(--shadow); padding: 24px; margin-bottom: 22px;
+        box-shadow: var(--shadow); padding: 26px 24px 24px; margin-bottom: 22px;
         scroll-margin-top: 84px;
       }
-      .tool h3 { font-size: 1.35rem; font-weight: 900; margin: 0 0 4px; letter-spacing: -0.01em; }
+      .tool::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+      .tool h3 { font-size: 1.35rem; font-weight: 900; margin: 0 0 6px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 14px; }
       .tool .tagline { color: var(--ink-soft); margin: 0 0 18px; max-width: 66ch; }
       .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
       @media (max-width: 760px) { .tool-grid { grid-template-columns: 1fr; } }
@@ -170,72 +209,115 @@
       .field label { display: block; font-weight: 700; margin-bottom: 5px; font-size: 0.97rem; }
       .field .hint { font-weight: 400; color: var(--ink-soft); font-size: 0.88rem; }
       .field input, .field select {
-        width: 100%; padding: 9px 12px; font: inherit; font-size: 1rem;
-        color: var(--ink); background: var(--bg);
-        border: 1px solid var(--line); border-radius: 9px;
+        width: 100%; padding: 10px 12px; font: inherit; font-size: 1rem;
+        color: var(--ink); background: var(--surface);
+        border: 1.5px solid var(--line); border-radius: 10px;
+      }
+      .field input:focus, .field select:focus {
+        border-color: var(--accent-2); outline: none;
+        box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.22);
       }
       .field-row { display: grid; grid-template-columns: 1fr 110px; gap: 10px; }
       .results {
-        background: var(--result-bg); border-radius: 10px; padding: 18px 20px;
+        background: linear-gradient(160deg, #f0fdfa 0%, #e8faf2 100%);
+        border: 1px solid #b5ece1; border-radius: 14px; padding: 20px;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start;
       }
-      .results h4 { margin: 0 0 10px; font-size: 0.95rem; font-weight: 800; }
-      .result-line { display: flex; justify-content: space-between; gap: 14px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
-      .result-line:last-of-type { border-bottom: none; }
-      .result-line .k { color: var(--ink-soft); }
-      .result-line .v { font-weight: 900; text-align: right; white-space: nowrap; }
-      .result-big { font-size: 1.5rem; font-weight: 900; margin: 2px 0 8px; }
+      @media (max-width: 480px) { .results { grid-template-columns: 1fr; } }
+      .results h4 {
+        grid-column: 1 / -1; margin: 0; font-size: 0.82rem; font-weight: 800;
+        letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent-dark);
+      }
+      .result-big {
+        grid-column: 1 / -1; font-size: clamp(2.1rem, 4.6vw, 2.7rem); font-weight: 900;
+        color: var(--accent-dark); margin: 0 0 4px; line-height: 1.08; letter-spacing: -0.02em;
+      }
+      .result-line {
+        background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(13, 148, 136, 0.16);
+        border-radius: 12px; padding: 10px 14px;
+        display: flex; flex-direction: column; gap: 1px;
+      }
+      .result-line .k { color: var(--ink-soft); font-size: 0.86rem; font-weight: 700; }
+      .result-line .v { font-weight: 900; font-size: 1.12rem; }
       .formula {
-        margin-top: 16px; background: var(--surface-2); border-radius: 10px; padding: 13px 16px;
-        font-size: 0.94rem;
+        margin-top: 16px; background: var(--surface-2); border: 1px solid var(--line);
+        border-radius: 12px; padding: 13px 16px; font-size: 0.94rem;
       }
       .formula strong { display: block; margin-bottom: 3px; }
       .formula code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; }
       .source { font-size: 0.88rem; color: var(--ink-soft); margin: 10px 0 0; }
       .notice {
-        margin-top: 14px; background: var(--warm-soft); color: var(--ink);
-        border-radius: 10px; padding: 10px 14px; font-size: 0.92rem; font-weight: 700;
+        margin-top: 14px; background: var(--warm-soft); border: 1px solid var(--warm-line); color: #92400e;
+        border-radius: 12px; padding: 10px 14px; font-size: 0.92rem; font-weight: 700;
       }
 
       .guide {
+        position: relative; overflow: hidden;
         background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-        box-shadow: var(--shadow); padding: 24px; margin-bottom: 22px; scroll-margin-top: 84px;
+        box-shadow: var(--shadow); padding: 26px 24px 24px; margin-bottom: 22px; scroll-margin-top: 84px;
       }
-      .guide h3 { font-size: 1.3rem; font-weight: 900; margin: 0 0 10px; letter-spacing: -0.01em; }
+      .guide::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+      .guide h3 { font-size: 1.3rem; font-weight: 900; margin: 0 0 10px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 13px; }
       .guide p { margin: 0 0 12px; max-width: 72ch; }
       .guide ul, .guide ol { margin: 0 0 12px; padding-left: 22px; max-width: 72ch; }
       .guide li { margin-bottom: 6px; }
       .guide .cta { font-weight: 800; }
       .worked {
-        background: var(--result-bg); border-radius: 10px; padding: 14px 18px; margin: 0 0 14px; max-width: 72ch;
+        background: var(--accent-soft); border: 1px solid var(--accent-tint);
+        border-radius: 12px; padding: 14px 18px; margin: 0 0 14px; max-width: 72ch;
       }
       .worked strong { display: block; margin-bottom: 4px; }
 
       .faq-item {
         background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-        padding: 18px 20px; margin-bottom: 14px;
+        box-shadow: var(--shadow); margin-bottom: 14px; overflow: hidden;
       }
-      .faq-item h3 { margin: 0 0 8px; font-size: 1.08rem; font-weight: 800; }
-      .faq-item p { margin: 0; color: var(--ink-soft); max-width: 72ch; }
+      .faq-item summary {
+        display: flex; align-items: center; justify-content: space-between; gap: 14px;
+        padding: 18px 20px; cursor: pointer; list-style: none;
+        font-size: 1.08rem; font-weight: 800; color: var(--ink);
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after {
+        content: ""; flex: none; width: 10px; height: 10px;
+        border-right: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent);
+        transform: rotate(45deg); transition: transform 0.2s ease;
+      }
+      .faq-item[open ] summary::after { transform: rotate(225deg); }
+      @media (prefers-reduced-motion: reduce) { .faq-item summary::after { transition: none; } }
+      .faq-item summary:hover { color: var(--accent-dark); }
+      .faq-item p { margin: 0; padding: 0 20px 18px; color: var(--ink-soft); max-width: 72ch; }
 
       .trust {
         background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow);
         padding: 22px 24px; margin-bottom: 18px; scroll-margin-top: 84px;
       }
-      .trust h3 { margin: 0 0 8px; font-size: 1.15rem; font-weight: 900; }
+      .trust h3 { margin: 0 0 8px; font-size: 1.15rem; font-weight: 900; color: var(--accent-dark); }
       .trust p { margin: 0 0 10px; color: var(--ink-soft); max-width: 72ch; }
       .trust p:last-child { margin-bottom: 0; }
 
-      footer.site { border-top: 1px solid var(--line); margin-top: 40px; padding: 26px 0 40px; background: var(--surface); }
-      footer.site nav ul { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0 0 14px; padding: 0; }
-      footer.site nav a { text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; min-height: 2rem; }
+      footer.site { border-top: 1px solid var(--line); margin-top: 40px; padding: 30px 0 40px; background: var(--surface); }
+      .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 28px; margin-bottom: 22px; }
+      @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } }
+      .footer-brand .brand { margin-bottom: 12px; }
+      footer.site nav h4 { margin: 4px 0 10px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-dark); }
+      footer.site nav ul { list-style: none; margin: 0; padding: 0; }
+      footer.site nav li { margin-bottom: 4px; }
+      footer.site nav a { text-decoration: none; font-weight: 700; color: var(--ink-soft); display: inline-flex; align-items: center; min-height: 2rem; }
+      footer.site nav a:hover { color: var(--accent-dark); }
       footer.site p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 8px; max-width: 78ch; }
       footer.site p.money { font-weight: 800; color: var(--ink); }
+      footer.site p.hosting { border-top: 1px solid var(--line); padding-top: 16px; margin-bottom: 0; }
     </style>
   </head>
   <body>
     <header class="site">
       <div class="wrap nav-row">
-        <a class="brand" href="#top">Pet Care <span>Calculators</span></a>
+        <a class="brand" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16" rx="4.6" ry="3.6" /><circle cx="4.9" cy="11.2" r="1.9" /><circle cx="8.3" cy="7.6" r="2.1" /><circle cx="15.7" cy="7.6" r="2.1" /><circle cx="19.1" cy="11.2" r="1.9" /></svg></span>Pet Care <span class="word-accent">Calculators</span></a>
         <nav class="main" aria-label="Main">
           <ul>
             <li><a href="#tools">Tools</a></li>
@@ -251,6 +333,7 @@
     <main id="top">
       <div class="wrap">
         <section class="hero">
+          <p class="badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16" rx="4.6" ry="3.6" /><circle cx="4.9" cy="11.2" r="1.9" /><circle cx="8.3" cy="7.6" r="2.1" /><circle cx="15.7" cy="7.6" r="2.1" /><circle cx="19.1" cy="11.2" r="1.9" /></svg>Free pet calculators · No sign-up</p>
           <h1>How old, how much food, how long to go — answered with the maths shown.</h1>
           <p class="lede">Six free calculators for dog and cat owners: dog age, cat age, dog food, cat food, puppy adult weight and dog pregnancy. Every result shows the formula and the source behind it, so you can check the working — not just trust a number.</p>
           <div class="facts">
@@ -271,17 +354,17 @@
           <p class="sub">Choose the closest match and jump straight to the right calculator.</p>
           <div class="start-grid">
             <a class="start-card" href="#dog-age">
-              <h3>Dogs</h3>
+              <h3><span class="tool-icon sm"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16" rx="4.6" ry="3.6" /><circle cx="4.9" cy="11.2" r="1.9" /><circle cx="8.3" cy="7.6" r="2.1" /><circle cx="15.7" cy="7.6" r="2.1" /><circle cx="19.1" cy="11.2" r="1.9" /></svg></span>Dogs</h3>
               <p>Your dog's age in human years (two methods), and exactly how much food a dog of their weight and life stage needs each day.</p>
               <span class="go">Dog age &amp; dog food →</span>
             </a>
             <a class="start-card" href="#cat-age">
-              <h3>Cats</h3>
+              <h3><span class="tool-icon sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg></span>Cats</h3>
               <p>Your cat's age in human years on the veterinary chart, plus a daily feeding amount worked out from their weight.</p>
               <span class="go">Cat age &amp; cat food →</span>
             </a>
             <a class="start-card" href="#puppy-weight">
-              <h3>Puppies &amp; pregnancy</h3>
+              <h3><span class="tool-icon sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg></span>Puppies &amp; pregnancy</h3>
               <p>A rough estimate of how big your puppy will grow, and a due-date window if your dog is expecting a litter.</p>
               <span class="go">Puppy weight &amp; due date →</span>
             </a>
@@ -294,7 +377,7 @@
 
           <!-- 1. DOG AGE -->
           <article class="tool" id="dog-age">
-            <h3>1. Dog Age Calculator</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><polyline points="12 7 12 12 15.5 14" /></svg></span>1. Dog Age Calculator</h3>
             <p class="tagline">Two recognised methods side by side: the veterinary age chart, which depends on your dog's size, and the UCSD epigenetic formula from DNA methylation research.</p>
             <div class="tool-grid">
               <form id="dog-age-form" novalidate>
@@ -331,7 +414,7 @@
 
           <!-- 2. CAT AGE -->
           <article class="tool" id="cat-age">
-            <h3>2. Cat Age Calculator</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg></span>2. Cat Age Calculator</h3>
             <p class="tagline">Cats race through their first two years, then age at a steadier pace of about four human years per cat year.</p>
             <div class="tool-grid">
               <form id="cat-age-form" novalidate>
@@ -356,7 +439,7 @@
 
           <!-- 3. DOG FOOD -->
           <article class="tool" id="dog-food">
-            <h3>3. Dog Food Calculator</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /><path d="M7 2v20" /><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></svg></span>3. Dog Food Calculator</h3>
             <p class="tagline">Daily calories from the resting energy requirement (RER) method vets use, converted into cups of your dog's actual food.</p>
             <div class="tool-grid">
               <form id="dog-food-form" novalidate>
@@ -404,7 +487,7 @@
 
           <!-- 4. CAT FOOD -->
           <article class="tool" id="cat-food">
-            <h3>4. Cat Food Calculator</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8c0-1.2 1-1.3 1-2.5" /><path d="M14 8c0-1.2 1-1.3 1-2.5" /><path d="M3.5 12h17" /><path d="M4.5 12a7.5 7.5 0 0 0 15 0Z" /><path d="M9 20.5h6" /></svg></span>4. Cat Food Calculator</h3>
             <p class="tagline">The same vet RER method, with the life-stage factors used for cats — neutered indoor cats need noticeably less than the bag often suggests.</p>
             <div class="tool-grid">
               <form id="cat-food-form" novalidate>
@@ -451,7 +534,7 @@
 
           <!-- 5. PUPPY WEIGHT -->
           <article class="tool" id="puppy-weight">
-            <h3>5. Puppy Weight Predictor</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7" /><polyline points="15 7 21 7 21 13" /></svg></span>5. Puppy Weight Predictor</h3>
             <p class="tagline">A rough growth-curve estimate of adult weight from your puppy's current weight and age. Breed makes a big difference — treat this as a ballpark, not a promise.</p>
             <div class="tool-grid">
               <form id="puppy-form" novalidate>
@@ -487,7 +570,7 @@
 
           <!-- 6. DOG PREGNANCY -->
           <article class="tool" id="dog-pregnancy">
-            <h3>6. Dog Pregnancy Calculator</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><polyline points="9 16 11 18 15 14" /></svg></span>6. Dog Pregnancy Calculator</h3>
             <p class="tagline">A due-date window from the mating date. Information only — pregnancy care, whelping plans and any worries belong with your vet.</p>
             <div class="tool-grid">
               <form id="pregnancy-form" novalidate>
@@ -518,7 +601,7 @@
           <p class="sub">The thinking behind the calculators, with the same worked examples you can check above.</p>
 
           <article class="guide" id="guide-dog-age">
-            <h3>How old is my dog in human years? Both methods explained</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg></span>How old is my dog in human years? Both methods explained</h3>
             <p>Almost everyone has heard the rule: multiply your dog's age by seven. It is simple, memorable — and wrong. Dogs do not age at a steady seven-times speed. They mature very fast in their first two years, then slow down, and larger dogs age faster in later life than smaller ones. A single multiplier cannot capture any of that.</p>
             <div class="worked">
               <strong>Worked example — a 5-year-old medium dog</strong>
@@ -530,7 +613,7 @@
           </article>
 
           <article class="guide" id="guide-dog-food">
-            <h3>How much should I feed my dog? The RER method vets use</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg></span>How much should I feed my dog? The RER method vets use</h3>
             <p>The feeding guide printed on a bag of dog food is written for an average dog that may not resemble yours — it cannot know whether your dog is neutered, elderly, or training for agility. Vets start from a different place: your dog's resting energy requirement, or RER — the calories needed at complete rest, calculated from body weight — then scale it by a life-stage factor to get the daily target (MER).</p>
             <div class="worked">
               <strong>Worked example — a 20-lb neutered adult dog</strong>
@@ -542,7 +625,7 @@
           </article>
 
           <article class="guide" id="guide-pregnancy">
-            <h3>Dog pregnancy timeline: the 63 days</h3>
+            <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg></span>Dog pregnancy timeline: the 63 days</h3>
             <p>A dog's pregnancy is short — about 63 days from mating, with a normal range of roughly 58 to 68 days. Because ovulation timing varies, count the due date as the middle of a window and plan around the whole of it. This is an overview to help you plan vet visits; it is not a substitute for them, and it deliberately does not attempt to diagnose anything.</p>
             <ul>
               <li><strong>Weeks 1–2:</strong> Fertilisation and implantation. Nothing is visible from outside; keep food, exercise and routine normal.</li>
@@ -560,22 +643,22 @@
           <h2 id="faq-h">Frequently asked questions</h2>
           <p class="sub">Short answers; the guides above carry the detail.</p>
 
-          <div class="faq-item">
-            <h3>Is the “1 dog year = 7 human years” rule true?</h3>
+          <details class="faq-item">
+            <summary>Is the “1 dog year = 7 human years” rule true?</summary>
             <p>No. Dogs mature much faster than that rule suggests in their first two years — the first year of a medium-sized dog's life is roughly equal to 15 human years, and the second adds about 9 more. After that, each dog year adds roughly 4 to 7 human years depending on size, with larger dogs ageing faster. That is why a 5-year-old medium dog works out to about 39 human years on the veterinary chart, not 35.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How many cups of food does a 20-lb dog need?</h3>
+          </details>
+          <details class="faq-item">
+            <summary>How many cups of food does a 20-lb dog need?</summary>
             <p>Using the RER method vets use: a 20-lb dog (9.07 kg) has a resting energy requirement of about 366 kcal per day. A typical neutered adult needs about 1.6 times that, roughly 585 kcal per day. With a food containing 350 kcal per cup, that is about 1.67 cups per day. Your dog's real need varies with activity and body condition, so adjust in small steps and check body condition every 2–4 weeks.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How long are dogs pregnant?</h3>
+          </details>
+          <details class="faq-item">
+            <summary>How long are dogs pregnant?</summary>
             <p>About 63 days from mating on average. The normal range is roughly 58 to 68 days, so a due date is best treated as the middle of a window rather than an exact day. If a pregnancy runs past 68 days, or you are unsure of the mating date, contact your vet.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can these calculators replace a vet?</h3>
+          </details>
+          <details class="faq-item">
+            <summary>Can these calculators replace a vet?</summary>
             <p>No. These calculators give general estimates from published formulas — they cannot examine your pet, and they do not diagnose, treat or dose anything. Always confirm feeding plans, growth concerns and pregnancy care with your own veterinarian, who knows your animal.</p>
-          </div>
+          </details>
         </section>
 
         <section class="block" aria-labelledby="trust-h">
@@ -615,26 +698,37 @@
 
     <footer class="site">
       <div class="wrap">
-        <nav aria-label="Footer">
-          <ul>
-            <li><a href="#dog-age">Dog Age</a></li>
-            <li><a href="#cat-age">Cat Age</a></li>
-            <li><a href="#dog-food">Dog Food</a></li>
-            <li><a href="#cat-food">Cat Food</a></li>
-            <li><a href="#puppy-weight">Puppy Weight</a></li>
-            <li><a href="#dog-pregnancy">Dog Pregnancy</a></li>
-            <li><a href="#guides">Guides</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#privacy">Privacy</a></li>
-            <li><a href="#terms">Terms</a></li>
-            <li><a href="#affiliate">Affiliate Disclosure</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <p class="money">Revenue: $0.00 · Monetization: not active</p>
-        <p>All calculators are estimates only and are not veterinary advice. Formulas and sources are shown on each tool.</p>
-        <p>Hosting note: this site is served as a single page, so it cannot provide separate sitemap.xml or robots.txt files. No claim is made about Google indexing or Search Console verification.</p>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16" rx="4.6" ry="3.6" /><circle cx="4.9" cy="11.2" r="1.9" /><circle cx="8.3" cy="7.6" r="2.1" /><circle cx="15.7" cy="7.6" r="2.1" /><circle cx="19.1" cy="11.2" r="1.9" /></svg></span>Pet Care <span class="word-accent">Calculators</span></a>
+            <p class="money">Revenue: $0.00 · Monetization: not active</p>
+            <p>All calculators are estimates only and are not veterinary advice. Formulas and sources are shown on each tool.</p>
+          </div>
+          <nav aria-label="Footer calculators">
+            <h4>Calculators</h4>
+            <ul>
+              <li><a href="#dog-age">Dog Age</a></li>
+              <li><a href="#cat-age">Cat Age</a></li>
+              <li><a href="#dog-food">Dog Food</a></li>
+              <li><a href="#cat-food">Cat Food</a></li>
+              <li><a href="#puppy-weight">Puppy Weight</a></li>
+              <li><a href="#dog-pregnancy">Dog Pregnancy</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Footer site">
+            <h4>Site</h4>
+            <ul>
+              <li><a href="#guides">Guides</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#terms">Terms</a></li>
+              <li><a href="#affiliate">Affiliate Disclosure</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="hosting">Hosting note: this site is served as a single page, so it cannot provide separate sitemap.xml or robots.txt files. No claim is made about Google indexing or Search Console verification.</p>
       </div>
     </footer>
 
