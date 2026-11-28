@@ -46,6 +46,11 @@
         },
         {
           "@type": "Question",
+          "name": "How much food does a 10-lb cat need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Using the RER method vets use: a 10-lb cat (4.54 kg) has a resting energy requirement of about 218 kcal per day. A typical neutered adult needs about 1.4 times that, roughly 305 kcal per day. With a food containing 350 kcal per cup, that is about 0.87 cups per day. Real needs vary with activity and body condition, so adjust in small steps and check body condition every 2–4 weeks." }
+        },
+        {
+          "@type": "Question",
           "name": "How long are dogs pregnant?",
           "acceptedAnswer": { "@type": "Answer", "text": "About 63 days from mating on average. The normal range is roughly 58 to 68 days, so a due date is best treated as the middle of a window rather than an exact day. If a pregnancy runs past 68 days, or you are unsure of the mating date, contact your vet." }
         },
@@ -488,7 +493,7 @@
           <!-- 4. CAT FOOD -->
           <article class="tool" id="cat-food">
             <h3><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8c0-1.2 1-1.3 1-2.5" /><path d="M14 8c0-1.2 1-1.3 1-2.5" /><path d="M3.5 12h17" /><path d="M4.5 12a7.5 7.5 0 0 0 15 0Z" /><path d="M9 20.5h6" /></svg></span>4. Cat Food Calculator</h3>
-            <p class="tagline">The same vet RER method, with the life-stage factors used for cats — neutered indoor cats need noticeably less than the bag often suggests.</p>
+            <p class="tagline">The same vet RER method, with the life-stage factors used for cats — neutered indoor cats need noticeably less than the bag often suggests. <a href="#guide-cat-food">Read the cat feeding guide →</a></p>
             <div class="tool-grid">
               <form id="cat-food-form" novalidate>
                 <div class="field">
@@ -637,6 +642,19 @@
             <p><strong>When to see the vet:</strong> book in as soon as you suspect pregnancy, again mid-pregnancy as advised, and call promptly if the 68-day mark passes with no labour, if labour stalls, or if anything worries you at any point. Only your vet, who can examine your dog, can judge whether things are progressing normally.</p>
             <p class="cta">Get your dog's due-date window: <a href="#dog-pregnancy">Dog Pregnancy Calculator →</a></p>
           </article>
+
+          <article class="guide" id="guide-cat-food">
+            <h3>How much should I feed my cat? The RER method for cats</h3>
+            <p>The feeding guide printed on a bag of cat food is written for an average cat that may not resemble yours — it cannot know whether your cat is neutered, elderly, or mostly asleep on the sofa. Vets start from the same place as for dogs: the resting energy requirement, or RER — the calories needed at complete rest, calculated from body weight — then scale it by a life-stage factor to get the daily target (MER).</p>
+            <div class="worked">
+              <strong>Worked example — a 10-lb neutered adult cat</strong>
+              10 lb is 4.54 kg. RER = 70 × 4.54<sup>0.75</sup> = <strong>218 kcal/day</strong>. A neutered adult's factor is 1.4, so MER = 218 × 1.4 = <strong>305 kcal/day</strong>. With a food at 350 kcal per cup: 305 ÷ 350 = <strong>0.87 cups per day</strong> — split across meals, and not counting treats.
+            </div>
+            <p><strong>The factor does the heavy lifting.</strong> An intact adult uses ×1.6; an inactive or weight-prone cat ×1.0; a kitten ×2.5. Picking the wrong factor changes the answer far more than rounding ever will — a kitten needs two and a half times the resting calories of an inactive adult at the same weight.</p>
+            <p><strong>Then reality-check it.</strong> These formulas estimate a starting point, not a verdict. Individual needs vary — commonly by 20% or more either way. Feed the calculated amount, then check body condition every 2–4 weeks: you should be able to feel ribs under a slight fat covering, and see a waist from above and the side. If your cat is gaining, trim the amount by about 10%; if losing, add about 10% — and raise any persistent change with your vet rather than this page.</p>
+            <p class="cta">Work out your cat's amount: <a href="#cat-food">Cat Food Calculator →</a> (feeding a dog? <a href="#dog-food">Dog Food Calculator →</a>)</p>
+          </article>
+
         </section>
 
         <section class="block" id="faq" aria-labelledby="faq-h">
@@ -650,6 +668,10 @@
           <details class="faq-item">
             <summary>How many cups of food does a 20-lb dog need?</summary>
             <p>Using the RER method vets use: a 20-lb dog (9.07 kg) has a resting energy requirement of about 366 kcal per day. A typical neutered adult needs about 1.6 times that, roughly 585 kcal per day. With a food containing 350 kcal per cup, that is about 1.67 cups per day. Your dog's real need varies with activity and body condition, so adjust in small steps and check body condition every 2–4 weeks.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much food does a 10-lb cat need?</summary>
+            <p>Using the RER method vets use: a 10-lb cat (4.54 kg) has a resting energy requirement of about 218 kcal per day. A typical neutered adult needs about 1.4 times that, roughly 305 kcal per day. With a food containing 350 kcal per cup, that is about 0.87 cups per day. Real needs vary with activity and body condition, so adjust in small steps and check body condition every 2–4 weeks. <a href="#guide-cat-food">Read the cat feeding guide</a>.</p>
           </details>
           <details class="faq-item">
             <summary>How long are dogs pregnant?</summary>
